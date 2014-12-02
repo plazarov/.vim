@@ -1,44 +1,37 @@
-execute pathogen#infect()
-set noexpandtab
+colorscheme desert
+set dir=~/.vim/backups
+
+runtime startup/cyrillic.vim
+
 set copyindent
 set preserveindent
-set softtabstop=0
-set shiftwidth=4
-set tabstop=4
-
-set bg=dark
-set wrapscan
-set hlsearch
+set mouse=a
+set number
 set spell
 set ignorecase
+set hlsearch
+set wrapscan
 set ruler
-set mouse=a
-set formatoptions=c,q,r,t
+set autoindent
+set smartindent
+set expandtab
 set encoding=utf-8
-set number
+set tabstop=2 shiftwidth=2 softtabstop=2
 
-colorscheme desert
-syntax enable
+execute pathogen#infect()
 
-let mapleader = ","
-nmap <leader>ne :NERDTreeTabsOpen<cr>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmp = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
+let g:SuperTabDefaultCompletionType='context'
+
+set nocompatible
+syntax on
+filetype on
+filetype plugin indent on
 
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
-
-
-
-
-filetype plugin on
-filetype indent on
-au FileType php set omnifunc=phpcomplete#CompletePHP
-let php_sql_query=1
-let php_htmlInStrings=1
-set completeopt=menuone,menu,longest
-
-"SuperTab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-
