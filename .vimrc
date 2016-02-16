@@ -1,5 +1,9 @@
 colorscheme desert
 set dir=~/.vim/backups
+set shell=/bin/bash
+
+set autochdir
+set tags=tags;
 
 runtime startup/cyrillic.vim
 
@@ -35,3 +39,12 @@ map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
+
+nnoremap    <leader>R       :RubocopThis<CR>
+nnoremap    <leader>T       :RubocopAll<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+highlight SingleQuotesPreferred ctermbg=yellow guibg=yellow
+match SingleQuotesPreferred /"[^\#{]+"/
